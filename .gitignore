@@ -8,9 +8,3 @@ gradlew
 gradlew.bat
 mvnw
 mvnw.cmd
-slertdb.script.lck
-slertdb.script.log
-slertdb.script.properties
-slertdb.script.script
-crypto-notifications-ui
-crypto-notifications-boot
