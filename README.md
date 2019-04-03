@@ -31,7 +31,7 @@
 Build with maven:
 `mvn clean install`
 
-Build in offline mode:
+Build with integration tests in offline mode:
 `mvn clean install -Poffline`
 
 ### Running the application
@@ -47,4 +47,11 @@ Then, open in your web browser the following address: [http://localhost:8080/ind
 - After adding an alert, a notification is generated only once, when price goes above the specified limit. It can be generated again after the price goes below limit and again above. 
 - Notification can be generated again also when alert is removed and added again.
 - Only one alert for given pair and limit can be added.
-- Offline mode is implemented by mocking the xchange API. Static price is returned with every call.
+- Offline mode is only for integration tests and is implemented by mocking the xchange API. Static price is returned with every call.
+### Possible improvements 
+What could be improved if more time was available
+- integration tests for web socket part. 
+- stubbing mocked ticker data service in offline mode integration tests - at the moment it is only there to return any value in offline mode
+- split integration test into two:
+  - one that includes call to xchange service (executed only when not offline) to test integration with xchange
+  - one that always utilizes mocked xchange service to control the xchange responses
